@@ -22,7 +22,7 @@ func locationManager(_ manager: CLLocationManager, _ status: CLAuthorizationStat
         // get user current location coordinates
         let location = manager.location!.coordinate
         // create url
-        let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(location.latitude)&lon=\(location.longitude)&appid=410d1a69fc7442938ca824dce73c9cdf")
+        let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(location.latitude)&lon=\(location.longitude)&appid={API key}")
         // make http (get) call
         let contents = try String(contentsOf: url!)
         // specify decoding format
