@@ -9,7 +9,7 @@
 import CoreLocation
 
 // specify how the JSON file looks like
-struct json: Codable {
+struct Json: Codable {
     let name: String
     let main: [String: Double]
     let wind: [String: Double]
@@ -25,7 +25,7 @@ func parseJSON(url: String) {
         // specify decoding format
         let data = contents.data(using: .utf8)
         // decode json data
-        let weatherData = try JSONDecoder().decode(json.self, from: data!)
+        let weatherData = try JSONDecoder().decode(Json.self, from: data!)
         // output
         print("City: \(weatherData.name)")
         print("Temperature: \(Int(weatherData.main["temp"]! - 273.15)) °C")
