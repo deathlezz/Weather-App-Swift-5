@@ -23,7 +23,7 @@ func locationManager(_ manager: CLLocationManager, _ status: CLAuthorizationStat
         let location = manager.location!.coordinate
         // create url
         let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(location.latitude)&lon=\(location.longitude)&appid={API key}")
-        // make http (get) call
+        // make http GET call
         let contents = try String(contentsOf: url!)
         // specify decoding format
         let data = contents.data(using: .utf8)
@@ -39,7 +39,7 @@ func locationManager(_ manager: CLLocationManager, _ status: CLAuthorizationStat
         
     } catch {
         // error handling
-        print("* Some error *")
+        print("* Some error occured *")
     }
 }
 
